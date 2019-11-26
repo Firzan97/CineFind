@@ -10,7 +10,16 @@
         <li><?= $this->Html->link(__('New Movie'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
+    <div class="movies index large-4 medium-8 columns content">
+    <?= $this->Form->create("",['type'=>'get']); ?>
+    <?= $this->Form->control('keyword',['default'=>$this->request->query("keyword")]); ?>
+    
+    <button>Submit</button>
+    <?= $this->Form->end(); ?>
+</div>
+
 <div class="movies index large-9 medium-8 columns content">
+
     <h3><?= __('Movies') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
