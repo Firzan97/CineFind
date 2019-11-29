@@ -20,7 +20,7 @@
             echo $this->Form->control('password');
             echo $this->Form->control('phone');
             echo $this->Form->control('email');
-            echo $this->Form->control('role');
+            echo $this->Form->hidden('role', array('default' => 'Customer'));
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
