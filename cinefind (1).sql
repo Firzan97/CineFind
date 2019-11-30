@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2019 at 05:24 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.1.28
+-- Generation Time: Nov 30, 2019 at 08:43 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -84,7 +84,25 @@ CREATE TABLE `movies` (
 
 INSERT INTO `movies` (`id`, `title`, `budget`, `rating`, `description`, `genre`, `length`, `image`) VALUES
 (2, 'Ejen Ali The Movie', 'RM6.5 Million', '8.8/10', 'Ejen Ali is embracing his role as a MATA spy and the only master of IRIS now. But unknown to Ali, MATA is developing new improved version of IRIS, the IRIS Neo. When IRIS Neo starts being used for all agents, Ali begins to question his usefulness to MATA. He is approached by a mysterious person named Niki who claims to know about his missing parents’ whereabouts. Risking his loyalty to MATA, Ejen Ali will now embark on thrilling chase to unravel those mysterious links.', 'Animation', '2 Hours 15 Minutes', '/img/ejenali.jpg'),
-(3, 'Joker', '$55–70 million', '8.7/10', 'Forever alone in a crowd, failed comedian Arthur Fleck seeks connection as he walks the streets of Gotham City. Arthur wears two masks -- the one he paints for his day job as a clown, and the guise he projects in a futile attempt to feel like he\'s part of the world around him. Isolated, bullied and disregarded by society, Fleck begins a slow descent into madness as he transforms into the criminal mastermind known as the Joker.', 'Drama/Thriller', ' 2h 2m', '/img/joker.jpg');
+(3, 'Joker', '$55–70 million', '8.7/10', 'Forever alone in a crowd, failed comedian Arthur Fleck seeks connection as he walks the streets of Gotham City. Arthur wears two masks -- the one he paints for his day job as a clown, and the guise he projects in a futile attempt to feel like he\'s part of the world around him. Isolated, bullied and disregarded by society, Fleck begins a slow descent into madness as he transforms into the criminal mastermind known as the Joker.', 'Drama/Thriller', ' 2h 2m', '/img/joker.jpg'),
+(4, 'Doctor Sleep ', '$45–55 million', '7.6/10', 'Years following the events of \"The Shining,\" a now-adult Dan Torrance must protect a young girl with similar powers from a cult known as The True Knot, who prey on children with powers to remain immortal.', 'Drama, Fantasy, Horror ', '2 Hours 32 Minutes ', '/img/doctor-sleep.jpg'),
+(5, 'Ford vs Ferrari', '$97.6 million', '8.3/10', 'American car designer Carroll Shelby and driver Ken Miles battle corporate interference, the laws of physics and their own personal demons to build a revolutionary race car for Ford and challenge Ferrari at the 24 Hours of Le Mans in 1966.', 'Action, Biography, Drama ', ' 2 Hours 32 minutes', '/img/fordvsferrari.jpg'),
+(6, 'Wira', 'RM8 million', '6.6/10', 'After leaving the military, Hassan returns home to help his brother settle a debt, to do so they must team up to fight the organiser\'s sons.', ' Action ', '1 hour 49 minutes', '/img/wira.jpg'),
+(7, 'Pusaka', 'RM 2 Million', '8/10', 'Skilled cop Inspector Nuar discovers twins, Balqis and Qistina, mysteriously locked up in an abandoned house. He suddenly starts suffering a series of unexplained hauntings, and individuals linked to the case begin dying one by one. Nuar must now race against time to solve the dark mystery behind the two girls before it\'s too late.', 'Horror', '1 hour 34 minutes', '/img/pusaka.jpg'),
+(8, 'Frozen II', '$33 million', '7.3/10', 'Anna, Elsa, Kristoff, Olaf and Sven leave Arendelle to travel to an ancient, autumn-bound forest of an enchanted land. They set out to find the origin of Elsa\'s powers in order to save their kingdom.', 'Animation, Adventure, Comedy ', '1 hour 43 minutes ', '/img/frozen2.jpg'),
+(9, 'Last Christmas', '30 million USD', '6.6/10', 'Kate is a young woman subscribed to bad decisions. Her last date with disaster? That of having accepted to work as Santa\'s elf for a department store. However, she meets Tom there. Her life takes a new turn. For Kate, it seems too good to be true.', ' Comedy, Drama, Romance ', '1 hour 43 minutes ', '/img/lastchristmas.jpg'),
+(10, 'Enai Noki Paayum Thota', 'Rs 2.1 million', '7.1/10', 'An ordinary college student falls in love with an actress and marries her, but things start to change bitter in their life.', ' Action, Drama, Thriller ', '2 hours 33 minutes', '/img/ennai2.jpg'),
+(11, 'Charlie\'s Angels', '75 million USD', '3.9/10', 'When a young systems engineer blows the whistle on a dangerous technology, Charlie\'s Angels are called into action, putting their lives on the line to protect us all.', 'Action, Adventure, Comedy ', ' 1 hour 58 minutes', '/img/charangels1.jpg'),
+(12, 'Better Days', '2.5 million yuan', '7.5/10', 'A bullied teenage girl forms an unlikely friendship with a mysterious young man who protects her from her assailants, all while she copes with the pressures of her final examinations.', 'Drama, Romance ', '2 hours 15 minutes ', '/img/betterday.jpg'),
+(13, 'Knives Out ', '40 million USD', '8.1/10', 'A detective investigates the death of a patriarch of an eccentric, combative family.', 'Comedy, Crime, Drama ', '2 hours 10 minutes ', '/img/knive.jpg'),
+(14, 'Gemini Man', '$138 million', '5.7/10', 'An over-the-hill hitman faces off against a younger clone of himself.', 'Action, Drama, Sci-Fi ', '1 hour 57 minutes ', '/img/gemini.jpg'),
+(15, 'Maleficent: Mistress of Evil', '185 million USD', '7.0/10', 'Maleficent and her goddaughter Aurora begin to question the complex family ties that bind them as they are pulled in different directions by impending nuptials, unexpected allies, and dark new forces at play.', 'Adventure, Family, Fantasy ', '1 hour 59 minutes ', '/img/malef.jpg'),
+(16, 'Return of the Devil\'s Child', 'rp 160 million', '6.6/10', 'Rama, Garin, Farel, Quincy and Celsi survive from the spirit terror at the Ayunan Island resort which harbored a terrible history of the slaughter of a family and resort employees. Rama is frantic: her lover is in a mental hospital, the body of Hana, his sister, and Fira have not been found. Rama returns to Ayunan Island to look for them. But obstacles lay ahead.', 'Horror ', '1 hour 24 minutes', '/img/kembali.jpg'),
+(17, 'Midway', '59.5 million USD', '6.9/10', 'The story of the Battle of Midway, told by the leaders and the sailors who fought it.', 'Action, Drama, History ', ' 2 hours 18 minutes', '/img/midway.jpg'),
+(18, 'Guilt By Design', '120 million yuan', '6.8/10', 'The film centers around a juror on a high-profile case who is blackmailed into fixing the verdict after his daughter is kidnapped.', 'Action, Crime ', '1 hour 33 minutes ', '/img/guilt.jpg'),
+(19, 'One Piece: Stampede', '50 million USD', '8.2/10', 'Pirates from around the world gather at the Pirates Expo to join the hunt for Gol D. Roger\'s lost treasure.', 'Animation, Action, Adventure', '1 hour 41 minutes', '/img/onep.jpg'),
+(20, 'Zombieland: Double Tap', '$42–48 million', '7.2/10', 'Columbus, Tallahassee, Wichita, and Little Rock move to the American heartland as they face off against evolved zombies, fellow survivors, and the growing pains of the snarky makeshift family.', 'Action, Comedy, Horror ', '1 hour 39 minutes ', '/img/zombie.jpg'),
+(21, 'The Addams Family', '40 million USD', '5.9/10', 'The eccentrically macabre family moves to a bland suburb where Wednesday Addams\' friendship with the daughter of a hostile and conformist local reality show host exacerbates conflict between the families.', 'Animation, Comedy, Family ', '1 hour 26 minutes ', '/img/addams.jpg');
 
 -- --------------------------------------------------------
 
@@ -266,7 +284,7 @@ ALTER TABLE `halls`
 -- AUTO_INCREMENT for table `movies`
 --
 ALTER TABLE `movies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `showtimes`
