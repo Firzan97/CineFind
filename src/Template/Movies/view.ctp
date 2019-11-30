@@ -4,6 +4,7 @@
  * @var \App\Model\Entity\Movie $movie
  */
 ?>
+
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -15,14 +16,35 @@
 </nav>
 <div class="movies view large-9 medium-8 columns content">
     <h3><?= h($movie->title) ?></h3>
+    <?= $this->Html->image($movie->image, ['alt' => 'CakePHP','height'=> '400px','width'=>'400px']); ?>
     <table class="vertical-table">
-        <tr>
+       <!-- <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($movie->id) ?></td>
-        </tr>
+        </tr>-->
     </table>
     <div class="row">
         <h4><?= __('Title') ?></h4>
         <?= $this->Text->autoParagraph(h($movie->title)); ?>
+    </div>
+    <div class="row">
+        <h4><?= __('Budget') ?></h4>
+        <?= $this->Text->autoParagraph(h($movie->budget)); ?>
+    </div>
+    <div class="row">
+        <h4><?= __('Rating') ?></h4>
+        <?= $this->Text->autoParagraph(h($movie->rating)); ?>
+    </div>
+    <div class="row">
+        <h4><?= __('Description') ?></h4>
+        <?= $this->Text->autoParagraph(h($movie->description)); ?>
+    </div>
+    <div class="row">
+        <h4><?= __('Genre') ?></h4>
+        <?= $this->Text->autoParagraph(h($movie->genre)); ?>
+    </div>
+    <div class="row">
+        <h4><?= __('Length') ?></h4>
+        <?= $this->Text->autoParagraph(h($movie->length)); ?>
     </div>
 </div>

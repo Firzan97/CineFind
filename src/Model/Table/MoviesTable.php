@@ -9,6 +9,8 @@ use Cake\Validation\Validator;
 /**
  * Movies Model
  *
+ * @property \App\Model\Table\ShowtimesTable&\Cake\ORM\Association\HasMany $Showtimes
+ *
  * @method \App\Model\Entity\Movie get($primaryKey, $options = [])
  * @method \App\Model\Entity\Movie newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Movie[] newEntities(array $data, array $options = [])
@@ -33,6 +35,11 @@ class MoviesTable extends Table
         $this->setTable('movies');
         $this->setDisplayField('title');
         $this->setPrimaryKey('id');
+
+        $this->hasMany('Showtimes', [
+            'foreignKey' => 'movie_id'
+        ]);
+        $this->belongsToMany('Cinemas');
     }
 
     /**
@@ -51,6 +58,36 @@ class MoviesTable extends Table
             ->scalar('title')
             ->requirePresence('title', 'create')
             ->notEmptyString('title');
+
+        $validator
+            ->scalar('budget')
+            ->requirePresence('budget', 'create')
+            ->notEmptyString('budget');
+
+        $validator
+            ->scalar('rating')
+            ->requirePresence('rating', 'create')
+            ->notEmptyString('rating');
+
+        $validator
+            ->scalar('description')
+            ->requirePresence('description', 'create')
+            ->notEmptyString('description');
+
+        $validator
+            ->scalar('genre')
+            ->requirePresence('genre', 'create')
+            ->notEmptyString('genre');
+
+        $validator
+            ->scalar('length')
+            ->requirePresence('length', 'create')
+            ->notEmptyString('length');
+
+        $validator
+            ->scalar('image')
+            ->requirePresence('image', 'create')
+            ->notEmptyFile('image');
 
         return $validator;
     }

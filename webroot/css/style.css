@@ -319,16 +319,23 @@ pre {
 }
 
 .top-bar.expanded .title-area {
-    background: #01545b;
+    background: #e0e00d;
+
+
 }
 
 .top-bar.expanded, .top-bar,.top-bar-section ul li,.top-bar-section li:not(.has-form) a:not(.button) {
-    background: #116d76;
+    background: #3b3b38;
+    
+}
+.top-bar{
+    box-shadow: 5px 5px 10px 2px #888888;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
-    background-color: #308e97;
-    background: #308e97;
+    background-color: #e0e00d;
+    background: #e0e00d;
+
 }
 
 .side-nav li.heading {
@@ -351,7 +358,7 @@ pre {
 }
 
 table {
-    background: #fff;
+    background: #f7f9fa;
     margin-bottom: 1.25rem;
     border: none;
     table-layout: fixed;
@@ -498,7 +505,7 @@ div.message.hidden {
 }
 
 .content h3 {
-    color: #be140b;
+    color: #242526;
     padding-bottom: 0.5rem;
     margin-bottom: 20px;
 }

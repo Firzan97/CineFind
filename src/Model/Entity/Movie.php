@@ -8,6 +8,14 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $title
+ * @property string $budget
+ * @property string $rating
+ * @property string $description
+ * @property string $genre
+ * @property string $length
+ * @property string $image
+ *
+ * @property \App\Model\Entity\Showtime[] $showtimes
  */
 class Movie extends Entity
 {
@@ -21,6 +29,13 @@ class Movie extends Entity
      * @var array
      */
     protected $_accessible = [
-        'title' => true
+        'title' => true,
+        'budget' => true,
+        'rating' => true,
+        'description' => true,
+        'genre' => true,
+        'length' => true,
+        'image' => true,
+        'showtimes' => true
     ];
 }

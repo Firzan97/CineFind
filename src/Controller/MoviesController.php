@@ -19,14 +19,6 @@ class MoviesController extends AppController
      */
     public function index()
     {
-        $keyword= $this->request->query("keyword");
-        echo $keyword;
-        if(!empty($keyword))
-        {
-            $this->paginate=[
-               'conditions'=>['id'=>$keyword]
-            ];
-        }
         $movies = $this->paginate($this->Movies);
 
         $this->set(compact('movies'));
@@ -42,7 +34,7 @@ class MoviesController extends AppController
     public function view($id = null)
     {
         $movie = $this->Movies->get($id, [
-            'contain' => []
+            'contain' => ['Showtimes']
         ]);
 
         $this->set('movie', $movie);

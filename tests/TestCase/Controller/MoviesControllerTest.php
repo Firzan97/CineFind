@@ -20,7 +20,8 @@ class MoviesControllerTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.Movies'
+        'app.Movies',
+        'app.Showtimes'
     ];
 
     /**
