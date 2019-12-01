@@ -22,7 +22,7 @@
     </ul>
 </nav>
 <div class="showtimes view large-9 medium-8 columns content">
-    <h3><?= h($showtime->id) ?></h3>
+    
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Movie') ?></th>
@@ -34,12 +34,9 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Cinema') ?></th>
-            <td><?= $showtime->has('cinema') ? $this->Html->link($showtime->cinema->id, ['controller' => 'Cinemas', 'action' => 'view', $showtime->cinema->id]) : '' ?></td>
+            <td><?= $showtime->has('cinema') ? $this->Html->link($showtime->cinema->company, ['controller' => 'Cinemas', 'action' => 'view', $showtime->cinema->id]) : '' ?></td>
         </tr>
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($showtime->id) ?></td>
-        </tr>
+    
         <tr>
             <th scope="row"><?= __('Date') ?></th>
             <td><?= h($showtime->date) ?></td>

@@ -319,7 +319,7 @@ pre {
 }
 
 .top-bar.expanded .title-area {
-    background: #e0e00d;
+    background: #3b3b38;
 
 
 }
@@ -353,12 +353,14 @@ pre {
 .index table {
     margin-top: 0rem;
     border: 0;
-    width: 100%;
+    width: 80%;
     table-layout: fixed;
 }
 
 table {
-    background: #f7f9fa;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
     margin-bottom: 1.25rem;
     border: none;
     table-layout: fixed;
@@ -528,4 +530,10 @@ div.message.hidden {
 table td {
     vertical-align: top;
     word-break: break-all;
+}
+
+img
+{
+    border-radius: 4%;
+  
 }

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2019 at 08:43 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.11
+-- Generation Time: Dec 01, 2019 at 06:33 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.1.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -39,7 +39,32 @@ CREATE TABLE `cinemas` (
 --
 
 INSERT INTO `cinemas` (`id`, `company`, `map`) VALUES
-(1, 'Seremban - Palm Mall', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.3244064800083!2d101.92001661475626!3d2.7196574980186807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cddd62b9887c67%3A0xe3ebddc361b215aa!2sPalm%20Mall!5e0!3m2!1sen!2smy!4v1575104546474!5m2!1sen!2smy');
+(1, 'Seremban - Palm Mall', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.3244064800083!2d101.92001661475626!3d2.7196574980186807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cddd62b9887c67%3A0xe3ebddc361b215aa!2sPalm%20Mall!5e0!3m2!1sen!2smy!4v1575104546474!5m2!1sen!2smy'),
+(2, 'Kuala Lumpur - Mid Valley Megamall', ''),
+(3, 'Kuala Lumpur - NU Sentral', ''),
+(4, 'Kuala Lumpur - Berjaya Time Square', ''),
+(5, 'Kuala Lumpur - Quill City Mall', ''),
+(6, 'Kuala Lumpur - Cheras Leisure Mall', ''),
+(7, 'Kuala Lumpur - EkoCheras Mall', ''),
+(8, 'Kuala Lumpur - MyTown', ''),
+(9, 'Kuala Lumpur - Melawati', ''),
+(10, 'Petaling Jaya - 1 Utama (New Wing)', ''),
+(11, 'Petaling Jaya - 3 Damansara (Tropicana City Mall)', ''),
+(12, 'Petaling Jaya - Paradigm Mall', ''),
+(13, 'Puchong - IOI Mall', ''),
+(14, 'Kuala Lumpur - Pavillion', ''),
+(15, 'Setia Alam - Setia City Mall', ''),
+(16, 'Klang - Klang Parade', ''),
+(17, 'Putrajaya - Alamanda', ''),
+(18, 'Putrajaya - IOI City Mall', ''),
+(19, 'Penang - Gurney Plaza', ''),
+(20, 'Penang - Queensbay Mall', ''),
+(21, 'Sunway Carnival', ''),
+(22, 'Alor Setar - Aman Central', ''),
+(23, 'Sg Petani - Amanjaya Mall', ''),
+(24, 'Ipoh - Ipoh Parade Mall', ''),
+(25, 'Melaka - Dataran Pahlawan', ''),
+(26, 'Subang Jaya - Summit USJ', '');
 
 -- --------------------------------------------------------
 
@@ -174,7 +199,9 @@ CREATE TABLE `showtimes` (
 
 INSERT INTO `showtimes` (`id`, `date`, `screentime`, `movie_id`, `hall_id`, `cinema_id`) VALUES
 (1, '2019-12-06', '10:30 AM', 2, 1, 1),
-(2, '2019-12-06', '12:00 AM', 2, 1, 1);
+(2, '2019-12-06', '12:00 AM', 2, 1, 1),
+(3, '2019-12-06', '10:30 AM', 2, 1, 2),
+(4, '2019-12-06', '12:00 AM', 2, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -217,7 +244,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `phone`, `email`, `role`) VALUES
-(1, 'delle ali', 'alazwan7@gmail.com', 'abc1234', '0192121', 'alazwan7@yahoo.com', 'users');
+(2, 'alazwan', 'alazwan97', '$2y$10$2.UkOzzllD52d91NwcLeOuhK4g8ZuiF5Oq2i3JC/P4EfZJhJ.GTAq', '0192351520', 'alazwan@gmail.com', 'customer'),
+(3, 'pijang', 'pijang97', '$2y$10$/euZFEs6R.bRv9GHnNgO7OVYkDz2Bni/iVIxFuHeRx2.CJXY./y1e', '0192351520', 'pijang@gmail.com', 'customer');
 
 --
 -- Indexes for dumped tables
@@ -290,7 +318,7 @@ ALTER TABLE `movies`
 -- AUTO_INCREMENT for table `showtimes`
 --
 ALTER TABLE `showtimes`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tickets`
@@ -302,7 +330,7 @@ ALTER TABLE `tickets`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

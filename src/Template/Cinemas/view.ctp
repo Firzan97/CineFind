@@ -16,13 +16,13 @@
     </ul>
 </nav>
 <div class="cinemas view large-9 medium-8 columns content">
-    <h3><?= h($cinema->id) ?></h3>
-    <table class="vertical-table">
+   
+    <!-- <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($cinema->id) ?></td>
         </tr>
-    </table>
+    </table> -->
     <div class="row">
         <h4><?= __('Company') ?></h4>
         <?= $this->Text->autoParagraph(h($cinema->company)); ?>

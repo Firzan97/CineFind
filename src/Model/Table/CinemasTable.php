@@ -39,6 +39,7 @@ class CinemasTable extends Table
         $this->hasMany('Showtimes', [
             'foreignKey' => 'cinema_id'
         ]);
+        $this->belongsToMany('Movies');
     }
 
     /**

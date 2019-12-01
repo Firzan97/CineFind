@@ -4,38 +4,46 @@
  * @var \App\Model\Entity\Movie[]|\Cake\Collection\CollectionInterface $movies
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <!--<li><?= $this->Html->link(__('New Movie'), ['action' => 'add']) ?></li>-->
-        <li><?= $this->Html->link(__('User Profile'), ['controller'=>'Users','action' => 'view']) ?></li>
-    </ul>
-</nav>
-<div class="movies index large-9 medium-8 columns content">
+
+<div class="movies index large-12 medium-8 columns content">
     <hr>
-    <h3><?= __('Now Showing') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+    <h3 class="nowshowing" align="center"><?= __('Now Showing') ?></h3>
+    <table cellpadding="0" cellspacing="0" >
         <thead>
             <tr>
                <!-- <th scope="col"><?= $this->Paginator->sort('Titles') ?></th>-->
                 <th></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <!--<th scope="col" class="actions"><?= __('Actions') ?></th>-->
             </tr>
         </thead>
         <tbody>
-
-            <?php foreach ($movies as $movie): ?>
-            <tr>
+           <tr>
+            <?php
+             $a=1; 
+              foreach ($movies as $movie): ?>
+            
                 <!--<td><?=  $this->Text->autoParagraph(h($movie->title));  ?></td> -->
-                 <td><?= $this->Html->image($movie->image, ['alt' => 'CakePHP','height'=> '100px','width'=>'300px']); ?></td>
-                 <td class="actions">
-                    <?= $this->Html->link(__('Buy'), ['controller'=>'Showtimes','action' => 'index', $movie->id]) ?>
-                    <?= $this->Html->link(__('Info'), ['action' => 'view', $movie->id]) ?>
-                    <!--<?= $this->Html->link(__('Edit'), ['action' => 'edit', $movie->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $movie->id], ['confirm' => __('Are you sure you want to delete # {0}?', $movie->id)]) ?>-->
-                </td>
+                 
+                   <td><?= $this->Html->image($movie->image, ['alt' => 'CakePHP','height'=> '100px','width'=>'150px','url'=>['action' => 'view', $movie->id]]); ?>
+                       <?=  $this->Text->autoParagraph(h($movie->title));  ?>
+                   </td>
+
+                 <!--<td class="actions">
+                    
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $movie->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $movie->id], ['confirm' => __('Are you sure you want to delete # {0}?', $movie->id)]) ?>
+                </td>-->
+
+            
+            <?php 
+              if($a%6==0)
+              { ?>
+                 <tr></tr>
+              <?php } 
+
+             $a++;
+           endforeach; ?>
             </tr>
-            <?php endforeach; ?>
         </tbody>
     </table>
     <div class="paginator">

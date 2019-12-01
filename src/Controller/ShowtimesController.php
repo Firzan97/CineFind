@@ -23,6 +23,7 @@ class ShowtimesController extends AppController
             'contain' => ['Movies', 'Halls', 'Cinemas']
         ];
         $showtimes = $this->paginate($this->Showtimes);
+        
 
         $this->set(compact('showtimes'));
     }
@@ -39,8 +40,9 @@ class ShowtimesController extends AppController
         $showtime = $this->Showtimes->get($id, [
             'contain' => ['Movies', 'Halls', 'Cinemas', 'Tickets']
         ]);
-
+        
         $this->set('showtime', $showtime);
+        
     }
 
     /**

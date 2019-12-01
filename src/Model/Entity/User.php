@@ -1,6 +1,6 @@
 <?php
 namespace App\Model\Entity;
-
+use Cake\Auth\DefaultPasswordHasher;
 use Cake\ORM\Entity;
 
 /**
@@ -33,7 +33,7 @@ class User extends Entity
         'email' => true,
         'role' => true
     ];
-
+      
     /**
      * Fields that are excluded from JSON versions of the entity.
      *
@@ -42,4 +42,10 @@ class User extends Entity
     protected $_hidden = [
         'password'
     ];
+    protected function _setPassword($password)
+    {
+        if (strlen($password) > 0) {
+            return (new DefaultPasswordHasher)->hash($password);
+        }
+    }
 }

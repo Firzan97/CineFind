@@ -22,6 +22,11 @@ class MoviesController extends AppController
         $movies = $this->paginate($this->Movies);
 
         $this->set(compact('movies'));
+
+        
+//         foreach ($query as $movie) {
+//         echo $movie->cinemas[0]->title;
+// }
     }
 
     /**
@@ -102,5 +107,17 @@ class MoviesController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+    
+    public function buy($id = null)
+    {
+          $movie = $this->Movies->get($id, [
+            'contain' => ['Showtimes'],
+
+
+        ]);
+          
+
+        $this->set('movie', $movie);
     }
 }

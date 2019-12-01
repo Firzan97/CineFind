@@ -38,4 +38,6 @@ class Movie extends Entity
         'image' => true,
         'showtimes' => true
     ];
+    
 }
+

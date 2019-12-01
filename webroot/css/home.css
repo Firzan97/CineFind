@@ -238,3 +238,8 @@ hr {
         max-width: 940px;
     }
 }
+
+.movieInfo{
+    margin-top: 20% !important;
+    margin-right: 90% !important;
+}
