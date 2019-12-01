@@ -3,12 +3,33 @@ a.disabled {
     pointer-events: none;
 }
 
+.viewall{
+    margin:0;
+    background-image: url(../img/wall.jpg);
+    background-size:contain;
+    background-attachment:fixed;
+}
+
+.indwall{
+    margin:0;
+    background-image: url(../img/wall3.jpg);
+    background-size:cover;
+    background-attachment:fixed;
+}
 a:hover {
     color: #15848F;
 }
 
 a {
-    color: #1798A5;
+    display: block;
+    text-decoration: none;
+    font-size: 15px;
+    text-align: center;
+    padding: 5px;
+    border-style: solid;
+    border-radius: 10px;
+    font-family: Century Gothic;
+    font-weight: bold;
 }
 
 .side-nav li a:not(.button) {
@@ -330,11 +351,14 @@ pre {
 }
 .top-bar{
     box-shadow: 5px 5px 10px 2px #888888;
+    border-style: solid;
+    border-radius: 10px;
+    color:red;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
-    background-color: #e0e00d;
-    background: #e0e00d;
+    background: #f90;
+    transition: 0.5s;
 
 }
 

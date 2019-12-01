@@ -38,11 +38,12 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <nav class="top-bar expanded" data-topbar role="navigation">
         <ul class="title-area large-3 medium-4 columns">
             <li class="name">
-                <h1><a href=""><?= $this->Html->link(__('Home'),['controller'=> 'Movies','action' => 'index']); ?></a></h1>
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
+                <h1><?= $this->Html->link(__('Home'),['controller'=> 'Movies','action' => 'index']); ?></h1>
+
+                <!--<h1><a href="CineFind/Movies/index"></a></h1>-->
             </li>
         </ul>
-        <div class="top-bar-section">
+        <ul class="top-bar-section">
             <ul class="right">
                 <?php if($loggedIn) : ?>
                 <li><?= $this->Html->link(__('Logout'), ['controller'=>'Users','action' => 'logout']) ?></li>
@@ -53,7 +54,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
               <?php endif; ?>
                 
             </ul>
-        </div>
+        </ul>
     </nav>
     <?= $this->Flash->render() ?>
     <div class="container clearfix">
