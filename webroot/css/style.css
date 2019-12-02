@@ -19,6 +19,14 @@ a.disabled {
 a:hover {
     color: #15848F;
 }
+a.login{
+    color: white;
+    font-size: 15px;
+    border-style: solid;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color:forestgreen;
+}
 
 a {
     display: block;
@@ -30,6 +38,22 @@ a {
     border-radius: 10px;
     font-family: Century Gothic;
     font-weight: bold;
+}
+
+a.log{
+    width: 120px;
+    color: white;
+    display: block;
+    text-decoration: none;
+    font-size: 15px;
+    text-align: center;
+    padding: 5px;
+    border-style: solid;
+    border-radius: 10px;
+    font-family: Century Gothic;
+    font-weight: bold;
+    background-color:crimson;
+    float:left;
 }
 
 .side-nav li a:not(.button) {
@@ -369,11 +393,6 @@ pre {
     text-transform: uppercase;
     padding: 0.4375rem 0.875rem;
 }
-
-#actions-sidebar {
-    background: #fafafa;
-}
-
 .index table {
     margin-top: 0rem;
     border: 0;

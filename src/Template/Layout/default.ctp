@@ -39,9 +39,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <ul class="title-area large-3 medium-4 columns">
             <li class="name">
                 <h1><?= $this->Html->link(__('Home'),['controller'=> 'Movies','action' => 'index']); ?></h1>
-
-                <!--<h1><a href="CineFind/Movies/index"></a></h1>-->
             </li>
+                <!--<h1><a href="CineFind/Movies/index"></a></h1>-->
         </ul>
         <ul class="top-bar-section">
             <ul class="right">
@@ -49,7 +48,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 <li><?= $this->Html->link(__('Logout'), ['controller'=>'Users','action' => 'logout']) ?></li>
                 <li><?= $this->Html->link(__('User Profile'), ['controller'=>'Users','action' => 'view']) ?></li>
                 <?php else  : ?>
-                <li><?= $this->Html->link(__('Login'), ['controller'=>'Users','action' => 'login']) ?></li>
+                <li><?= $this->Html->link(__('Admin'),['controller'=> 'Users','action' => 'adminlogin']); ?></li>
+                <li><?= $this->Html->link(__('Customer Login'), ['controller'=>'Users','action' => 'login']) ?></li>
                 <li><?= $this->Html->link(__('Register'), ['controller'=>'Users','action' => 'add']) ?></li>
               <?php endif; ?>
                 

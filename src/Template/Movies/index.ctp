@@ -21,8 +21,8 @@
             <?php
              $a=1; 
               foreach ($movies as $movie): ?>
-                   <td><font color = "white"><?= $this->Html->image($movie->image, ['alt' => 'CakePHP','height'=> '100px','width'=>'150px','url'=>['action' => 'view', $movie->id]]); ?>
-                       <?=  $this->Text->autoParagraph(h($movie->title));  ?></font>
+                   <td><b><font color = "white"><?= $this->Html->image($movie->image, ['alt' => 'CakePHP','height'=> '100px','width'=>'150px','url'=>['action' => 'view', $movie->id]]); ?>
+                       <?=  $this->Text->autoParagraph(h($movie->title));  ?></font></b>
                    </td>        
             <?php 
               if($a%6==0)
