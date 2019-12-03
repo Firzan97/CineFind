@@ -4,9 +4,9 @@
  * @var \App\Model\Entity\Showtime[]|\Cake\Collection\CollectionInterface $showtimes
  */
 ?>
-<<<<<<< HEAD
-<!-- <nav class="large-3 medium-4 columns" id="actions-sidebar">
-=======
+
+
+<body class = "showall">
 <style>
     nav{
         border-radius: 10px;
@@ -16,9 +16,10 @@
     border-radius: 20px;
     color: darkolivegreen;
     }
+
 </style>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
->>>>>>> f1e7e89c4985ea378e536c7a82c384936878d440
+<!--<nav class="large-3 medium-4 columns" id="actions-sidebar">
+
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Showtime'), ['action' => 'add']) ?></li>
@@ -35,9 +36,9 @@
 <div class="showtimes index large-1 medium-8 columns content">
     </div>
 <div class="showtimes index large-10 medium-8 columns content">
-    <h3 align="center"><?= __('Showtimes') ?></h3>
+    <h3 align="center"><font color="white"><?= __('Showtimes') ?></font></h3>
     <hr>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" style = "background-color: rgba(255,255,255,0.7)">
         <thead>
             <tr>
                <!-- <th scope="col"><?= $this->Paginator->sort('id') ?></th> -->
@@ -97,3 +98,4 @@
 </div>
 <div class="showtimes index large-1 medium-8 columns content">
     </div>
+</body>

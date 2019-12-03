@@ -4,18 +4,51 @@ a.disabled {
 }
 
 .viewall{
-    margin:0;
+    margin-top:70px;
     background-image: url(../img/wall.jpg);
     background-size:contain;
     background-attachment:fixed;
 }
 
 .indwall{
-    margin:0;
+    margin-top:70px;
     background-image: url(../img/wall3.jpg);
     background-size:cover;
     background-attachment:fixed;
 }
+
+.showall{
+    margin-top:70px;
+    background-image: url(../img/wall4.jpg);
+    background-size:cover;
+    background-attachment:fixed;
+}
+
+.hall{
+    margin-top:70px;
+    background-image: url(../img/hall.jpg);
+    background-size:cover;
+    background-attachment:fixed;
+}
+
+.tickwall{
+    margin-top:70px;
+    background-color: rgba(255,255,255,7);
+    background-image: url(../img/ticket.jpg);
+    background-size:cover;
+    background-attachment:fixed;
+}
+
+.adminwall{
+    margin-top:70px;
+    background-image: url(../img/admin.jpg);
+    background-size:cover;
+    background-attachment:fixed;
+}
+body{
+    margin-top:70px;
+}
+
 a:hover {
     color: #15848F;
 }
@@ -57,7 +90,7 @@ a.log{
 }
 
 .side-nav li a:not(.button) {
-    color: #15848F;
+    color: white;
 }
 
 .side-nav li a:not(.button):hover {
@@ -133,7 +166,8 @@ legend {
 }
 
 ul.pagination li a {
-    color: rgba(0, 0 ,0 , 0.54);
+    color:white;
+    background-color: rgba(0, 0 ,0 , 0.6);
 }
 
 ul.pagination li.active a {
@@ -157,7 +191,13 @@ ul.pagination .disabled:hover a {
 
 .paginator p {
     text-align: right;
-    color: rgba(0, 0 ,0 , 0.54);
+    color:white;
+    background-color: rgba(0, 0 ,0 , 0.6);
+    display: inline-block;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 5px;
+
 }
 
 .asc:after {
@@ -365,8 +405,12 @@ pre {
 
 .top-bar.expanded .title-area {
     background: #3b3b38;
+    
 
 
+}
+.top-bar.expanded{
+ 
 }
 
 .top-bar.expanded, .top-bar,.top-bar-section ul li,.top-bar-section li:not(.has-form) a:not(.button) {
@@ -378,6 +422,13 @@ pre {
     border-style: solid;
     border-radius: 10px;
     color:red;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: 9999;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
@@ -387,7 +438,7 @@ pre {
 }
 
 .side-nav li.heading {
-    color: #1798A5;
+    color: white;
     font-size: 0.875rem;
     font-weight: bold;
     text-transform: uppercase;

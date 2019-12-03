@@ -4,10 +4,11 @@
  * @var \App\Model\Entity\Hall[]|\Cake\Collection\CollectionInterface $halls
  */
 ?>
+<body class="hall">
 <style>
     nav{
         border-radius: 10px;
-        background-color: rgba(0,0,0,3);
+        background-color: rgba(0,0,0,0.3);
     height: 60px;
     border-style: solid;
     border-radius: 20px;
@@ -25,7 +26,7 @@
     </ul>
 </nav>
 <div class="halls index large-9 medium-8 columns content">
-    <h3><?= __('Halls') ?></h3>
+    <h3 align="center"><font color="white"><?= __('Halls') ?></font>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -59,3 +60,4 @@
         <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
     </div>
 </div>
+</body>

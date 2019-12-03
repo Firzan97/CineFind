@@ -4,6 +4,18 @@
  * @var \App\Model\Entity\User[]|\Cake\Collection\CollectionInterface $users
  */
 ?>
+<body class ="adminwall">
+  <style>
+    nav{
+        border-radius: 10px;
+        background-color: rgba(0,0,0,0.5);
+    height: 60px;
+    border-style: solid;
+    border-radius: 20px;
+    color: darkolivegreen;
+    }
+</style>  
+    
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -11,7 +23,7 @@
     </ul>
 </nav>
 <div class="users index large-9 medium-8 columns content">
-    <h3><?= __('Users') ?></h3>
+    <h3 align ="center"><font color="white"><?= __('Users') ?></font></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -47,3 +59,4 @@
         <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
     </div>
 </div>
+</body>

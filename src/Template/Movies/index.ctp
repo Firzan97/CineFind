@@ -8,12 +8,10 @@
 <div class="movies index large-12 medium-8 columns content">
     <hr>
     <h3 class="nowshowing" align="center"><?= __('Now Showing') ?></h3>
-<<<<<<< HEAD
+
 
     <table cellpadding="0" cellspacing="0" >
-=======
     <table cellpadding="0" cellspacing="0" style = "background-color: rgba(0,0,0,0.7)" >
->>>>>>> f1e7e89c4985ea378e536c7a82c384936878d440
         <thead>
             <tr>
                <!-- <th scope="col"><?= $this->Paginator->sort('Titles') ?></th>-->
@@ -82,7 +80,7 @@ $json = json_decode($str, true);
 //   }
   ?>
 
-  <table cellpadding="0" cellspacing="0" >
+  <table cellpadding="0" cellspacing="0" style = "background-color: rgba(0,0,0,0.7)" >
         <thead>
             <tr>
                <!-- <th scope="col"><?= $this->Paginator->sort('Titles') ?></th>-->
@@ -97,18 +95,18 @@ $json = json_decode($str, true);
               ?>
             
                  
-                   <td><img  src=<?php  echo "https://image.tmdb.org/t/p/w500/".$title= $json['results'][8]['poster_path'];?> height="50px" width="300px" >.<br>
-                      <?php echo $title= $json['results'][8]['title']; ?>
+                   <td><img  src=<?php  echo "https://image.tmdb.org/t/p/w500/".$title= $json['results'][8]['poster_path'];?> height="50px" width="300px" >.<br><br><font size="4" color = "white">
+                       <?php echo $title= $json['results'][8]['title']; ?></font>
                    </td>
             <?php 
           
 
                ?>
-                 <tr></tr>
+                 
               <?php  
           
             ?>
-            </tr>
+               </tr>
         </tbody>
     </table>
     <div class="paginator">

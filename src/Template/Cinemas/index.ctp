@@ -4,10 +4,11 @@
  * @var \App\Model\Entity\Cinema[]|\Cake\Collection\CollectionInterface $cinemas
  */
 ?>
+<body class ="hall">
 <style>
     nav{
         border-radius: 10px;
-        background-color: rgba(0,0,0,3);
+        background-color: rgba(0,0,0,0.5);
     height: 60px;
     border-style: solid;
     border-radius: 20px;
@@ -23,7 +24,7 @@
     </ul>
 </nav>
 <div class="cinemas index large-9 medium-8 columns content">
-    <h3><?= __('Cinemas') ?></h3>
+    <h3 align="center"><font color="white"><?= __('Cinemas') ?></font></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -65,3 +66,4 @@
         <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
     </div>
 </div>
+</body>

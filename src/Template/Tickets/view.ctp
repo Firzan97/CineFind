@@ -4,10 +4,11 @@
  * @var \App\Model\Entity\Ticket $ticket
  */
 ?>
+<body class="tickwall">
 <style>
     nav{
         border-radius: 10px;
-        background-color: rgba(0,0,0,3);
+        background-color: rgba(0,0,0,0.5);
     height: 60px;
     border-style: solid;
     border-radius: 20px;
@@ -46,3 +47,4 @@
         </tr>
     </table>
 </div>
+</body>
