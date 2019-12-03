@@ -4,7 +4,21 @@
  * @var \App\Model\Entity\Hall $hall
  */
 ?>
+<<<<<<< HEAD
 <!-- <nav class="large-3 medium-4 columns" id="actions-sidebar">
+=======
+<style>
+    nav{
+        border-radius: 10px;
+        background-color: rgba(0,0,0,3);
+    height: 60px;
+    border-style: solid;
+    border-radius: 20px;
+    color: darkolivegreen;
+    }
+</style>
+<nav class="large-3 medium-4 columns" id="actions-sidebar">
+>>>>>>> f1e7e89c4985ea378e536c7a82c384936878d440
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Hall'), ['action' => 'edit', $hall->id]) ?> </li>

@@ -4,12 +4,16 @@
  * @var \App\Model\Entity\Movie[]|\Cake\Collection\CollectionInterface $movies
  */
 ?>
-
+<body class = "indwall">
 <div class="movies index large-12 medium-8 columns content">
     <hr>
     <h3 class="nowshowing" align="center"><?= __('Now Showing') ?></h3>
+<<<<<<< HEAD
 
     <table cellpadding="0" cellspacing="0" >
+=======
+    <table cellpadding="0" cellspacing="0" style = "background-color: rgba(0,0,0,0.7)" >
+>>>>>>> f1e7e89c4985ea378e536c7a82c384936878d440
         <thead>
             <tr>
                <!-- <th scope="col"><?= $this->Paginator->sort('Titles') ?></th>-->
@@ -22,20 +26,9 @@
             <?php
              $a=1; 
               foreach ($movies as $movie): ?>
-            
-                <!--<td><?=  $this->Text->autoParagraph(h($movie->title));  ?></td> -->
-                 
-                   <td><?= $this->Html->image($movie->image, ['alt' => 'CakePHP','height'=> '100px','width'=>'150px','url'=>['action' => 'view', $movie->id]]); ?>
-                       <?=  $this->Text->autoParagraph(h($movie->title));  ?>
-                   </td>
-
-                 <!--<td class="actions">
-                    
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $movie->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $movie->id], ['confirm' => __('Are you sure you want to delete # {0}?', $movie->id)]) ?>
-                </td>-->
-
-            
+                   <td><b><font color = "white"><?= $this->Html->image($movie->image, ['alt' => 'CakePHP','height'=> '100px','width'=>'150px','url'=>['action' => 'view', $movie->id]]); ?>
+                       <?=  $this->Text->autoParagraph(h($movie->title));  ?></font></b>
+                   </td>        
             <?php 
               if($a%6==0)
               { ?>
@@ -129,3 +122,4 @@ $json = json_decode($str, true);
         <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
     </div>
 </div>
+</body>

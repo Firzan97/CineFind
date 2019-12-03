@@ -4,6 +4,16 @@
  * @var \App\Model\Entity\Seat[]|\Cake\Collection\CollectionInterface $seats
  */
 ?>
+<style>
+    nav{
+        border-radius: 10px;
+        background-color: rgba(0,0,0,3);
+    height: 60px;
+    border-style: solid;
+    border-radius: 20px;
+    color: darkolivegreen;
+    }
+</style>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>

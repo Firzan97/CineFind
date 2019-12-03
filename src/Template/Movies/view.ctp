@@ -15,6 +15,19 @@
         <li><?= $this->Html->link(__('New Showtime'), ['controller' => 'Showtimes', 'action' => 'add']) ?> </li>
     </ul>
 </nav> -->
+<style>
+    div{ background-color: rgba(0,0,0,0.7);
+    width: 80%; margin: 0 auto;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    font-family:monospace;
+    border: 2px solid red;
+    border-radius: 12px;
+    }
+    
+</style>
+<body class = "viewall">
 <div class="movies view large-12 medium-8 columns content">
   <!--  <h3><?= h($movie->title) ?></h3>
      <table class="vertical-table">
@@ -57,4 +70,4 @@
         <?= $this->Text->autoParagraph(h($movie->image)); ?>
     </div> -->
    
-</div>
+</div></body>
