@@ -25,6 +25,7 @@
         <?php
             echo $this->Form->control('row');
             echo $this->Form->control('hall_id', ['options' => $halls]);
+            echo $this->Form->control('reserve');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

@@ -33,6 +33,7 @@ class HallsController extends AppController
      */
     public function view($id = null)
     {
+
         $hall = $this->Halls->get($id, [
             'contain' => ['Seats', 'Showtimes']
         ]);
@@ -102,5 +103,72 @@ class HallsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+    public function buy($id=null)
+    {
+        $this->loadModel('Seats');
+
+        $ticket=$this->loadModel('Tickets');
+        
+        // $seat=$this->get($id);
+        // $ticket=$this->get($id);
+        $totalprice=0;
+        if ($this->request->is(['patch', 'post', 'put'])) 
+        {
+            //ambik data form daripada hall view
+            $data=$this->request->getData();
+
+            //pecahkan data daripada hall view
+            $hallBuy=$data["hallid"];
+            $seatBuy= $data["Seat"];
+            $quantityBuy=$data["Quantity"];
+
+           //cari array hall based on data yang diisi di hall view
+           $hall = $this->Halls->get($data["hallid"], [
+            'contain' => ['Seats', 'Showtimes']
+        ]);
+          
+          $count=0;
+          foreach($hall->seats as $seat):
+            if($seat->id==$data["Seat"])
+            {
+
+                $seat->reserve="yes";
+                $this->Seats->save($seat);
+                $count++;
+            }
+    endforeach;
+        
+
+          $this->loadModel("Showtimes");
+          $showtime=$this->Showtimes->get($hall->id,[
+            'contain'=>['Tickets']
+        ]);
+          
+          foreach($showtime->tickets as $ticket):
+            $price=15*$count;
+            $totalprice=$totalprice+$price;
+            
+            $ticket->quantity-$count;
+            $this->Tickets->save($ticket);
+            $count=0;
+          endforeach;
+          
+          $this->loadModel("Cinemas");
+          $cinema=$this->Cinemas->get($showtime->id);
+        
+          $this->loadModel("Movies");
+          $movie=$this->Movies->get($showtime->movie_id);
+
+
+
+          $this->set('totalprice', $totalprice);
+          $this->set('price', $price);
+          $this->set('count',$count);
+          $this->set('seat',$seatBuy);
+          $this->set('showtime',$showtime);
+          $this->set('cinema',$cinema);
+          $this->set('movie',$movie);
+      }
     }
 }

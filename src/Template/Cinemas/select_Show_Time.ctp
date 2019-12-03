@@ -22,6 +22,8 @@
             </tr>
         </thead>
         <tbody>
+            <?= $this->Text->autoParagraph(h($movie->title)) ?> 
+
             <?php foreach ($cinemas as $cinema): ?>
             <tr>
                 <td>

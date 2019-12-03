@@ -29,9 +29,11 @@
     </div>
     <div class="row">
         <h4><?= __('Map') ?></h4>
-        <?= $this->Text->autoParagraph(h($cinema->map)); ?>
+       <iframe src=<?php echo "'".$cinema->map."'" ?>. width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+
+        
     </div>
-    <div class="related">
+   <!--  <div class="related">
         <h4><?= __('Related Showtimes') ?></h4>
         <?php if (!empty($cinema->showtimes)): ?>
         <table cellpadding="0" cellspacing="0">
@@ -61,5 +63,5 @@
             <?php endforeach; ?>
         </table>
         <?php endif; ?>
-    </div>
+    </div> -->
 </div>

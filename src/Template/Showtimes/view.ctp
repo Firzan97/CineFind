@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Showtime $showtime
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<!-- <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Showtime'), ['action' => 'edit', $showtime->id]) ?> </li>
@@ -20,7 +20,8 @@
         <li><?= $this->Html->link(__('List Tickets'), ['controller' => 'Tickets', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Ticket'), ['controller' => 'Tickets', 'action' => 'add']) ?> </li>
     </ul>
-</nav>
+</nav> -->
+
 <div class="showtimes view large-9 medium-8 columns content">
     
     <table class="vertical-table">
@@ -46,6 +47,17 @@
         <h4><?= __('Screentime') ?></h4>
         <?= $this->Text->autoParagraph(h($showtime->screentime)); ?>
     </div>
+     <div class="row">
+   <nav class='large-3'>
+    <!-- <?= $this->Form->create(); ?>
+    <?= $this->Form->control('author.id'); ?>
+    <h5>Enter number of ticket</h5>
+    <?= $this->Form->text('Number of ticket',['value'=>0]); ?>
+    <?= $this->Form->submit('BUY'); ?>
+    <?= $this->Form->end(); ?> -->
+    <?= $this->Html->link(__('Select Seat'), ['controller'=>'halls','action' => 'view', $showtime->id & $showtime->id]) ?> 
+</nav>
+     <!-- <div class="row">
     <div class="related">
         <h4><?= __('Related Tickets') ?></h4>
         <?php if (!empty($showtime->tickets)): ?>
@@ -73,4 +85,5 @@
         </table>
         <?php endif; ?>
     </div>
-</div>
+</div> -->
+

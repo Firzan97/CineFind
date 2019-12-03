@@ -61,6 +61,11 @@ class SeatsTable extends Table
             ->requirePresence('row', 'create')
             ->notEmptyString('row');
 
+        $validator
+            ->scalar('reserve')
+            ->requirePresence('reserve', 'create')
+            ->notEmptyString('reserve');
+
         return $validator;
     }
 

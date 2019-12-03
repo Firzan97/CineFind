@@ -9,6 +9,7 @@ use Cake\ORM\Entity;
  * @property string $id
  * @property string $row
  * @property int $hall_id
+ * @property string $reserve
  *
  * @property \App\Model\Entity\Hall $hall
  */
@@ -26,6 +27,7 @@ class Seat extends Entity
     protected $_accessible = [
         'row' => true,
         'hall_id' => true,
+        'reserve' => true,
         'hall' => true
     ];
 }

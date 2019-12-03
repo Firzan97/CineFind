@@ -31,4 +31,8 @@
             <td><?= $seat->has('hall') ? $this->Html->link($seat->hall->name, ['controller' => 'Halls', 'action' => 'view', $seat->hall->id]) : '' ?></td>
         </tr>
     </table>
+    <div class="row">
+        <h4><?= __('Reserve') ?></h4>
+        <?= $this->Text->autoParagraph(h($seat->reserve)); ?>
+    </div>
 </div>

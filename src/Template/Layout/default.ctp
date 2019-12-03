@@ -46,7 +46,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <ul class="right">
                 <?php if($loggedIn) : ?>
                 <li><?= $this->Html->link(__('Logout'), ['controller'=>'Users','action' => 'logout']) ?></li>
-                <li><?= $this->Html->link(__('User Profile'), ['controller'=>'Users','action' => 'view']) ?></li>
+                <li><?= $this->Html->link(__('User Profile'), ['controller'=>'Users','action' => 'view',$this->Session->read('Auth.User.id')]) ?></li>
                 <?php else  : ?>
                 <li><?= $this->Html->link(__('Login'), ['controller'=>'Users','action' => 'login']) ?></li>
                 <li><?= $this->Html->link(__('Register'), ['controller'=>'Users','action' => 'add']) ?></li>

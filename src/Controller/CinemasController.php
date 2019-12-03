@@ -19,7 +19,11 @@ class CinemasController extends AppController
      */
     public function index()
     {
+         $this->paginate = [
+        'contain' => ['Showtimes']
+    ];
         $cinemas = $this->paginate($this->Cinemas);
+
 
         $this->set(compact('cinemas'));
     }
@@ -102,5 +106,19 @@ class CinemasController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+    public function selectShowtime($id = null)
+    { 
+               //this for show list of showtime based on movie
+                $this->loadModel('Movies');
+                $movie = $this->Movies->get($id, ['contain' => ['Showtimes']]);
+                $this->set('movie', $movie);
+
+                //this for show list of showtime
+                 $this->paginate = ['contain' => ['Showtimes']];
+                 $cinemas = $this->paginate($this->Cinemas);
+
+
+        $this->set(compact('cinemas'));
     }
 }

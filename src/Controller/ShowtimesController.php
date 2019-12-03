@@ -17,7 +17,7 @@ class ShowtimesController extends AppController
      *
      * @return \Cake\Http\Response|null
      */
-    public function index()
+    public function index($id=null)
     {
         $this->paginate = [
             'contain' => ['Movies', 'Halls', 'Cinemas']
@@ -26,6 +26,7 @@ class ShowtimesController extends AppController
         
 
         $this->set(compact('showtimes'));
+        $this->set(compact('id',$id));
     }
 
     /**
@@ -42,7 +43,22 @@ class ShowtimesController extends AppController
         ]);
         
         $this->set('showtime', $showtime);
-        
+
+     $showtime = $this->Showtimes->get($id, [
+            'contain' => ['Movies', 'Halls', 'Cinemas', 'Tickets']
+        ]);
+            if ($this->request->is(['patch', 'post', 'put'])) 
+            {
+            $showtime = $this->Showtimes->patchEntity($showtime, $this->request->getData());
+            if ($this->Showtimes->save($showtime)) {
+                $this->Flash->success(__('The showtime has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The showtime could not be saved. Please, try again.'));
+        }
+    
+
     }
 
     /**
@@ -113,5 +129,17 @@ class ShowtimesController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+    public function showTime($id = null)
+    {
+         $this->loadModel('Movies');
+         $movies = $this->Movies->get($id, [
+            'contain' => ['Showtimes']
+        ]);
+        $this->set('movies', $movies);
+    
+
+    // echo $article->cinema[0]->company;
+
     }
 }
