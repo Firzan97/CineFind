@@ -85,6 +85,7 @@
            endforeach; ?>
         </tbody>
     </table>
+    <?= $this->Html->link(__('Buy'), ['controller' => 'Movies', 'action' => 'view']) ?> 
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->first('<< ' . __('first')) ?>

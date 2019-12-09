@@ -122,23 +122,27 @@ class HallsController extends AppController
             $hallBuy=$data["hallid"];
             $seatBuy= $data["Seat"];
             $quantityBuy=$data["Quantity"];
-
+             $a=explode(",",$seatBuy);
            //cari array hall based on data yang diisi di hall view
            $hall = $this->Halls->get($data["hallid"], [
             'contain' => ['Seats', 'Showtimes']
         ]);
           
           $count=0;
+          $count2=0;
+          for($i=0;$i<count($a);$i++)
+        {
           foreach($hall->seats as $seat):
-            if($seat->id==$data["Seat"])
+            if($seat->id==$a[$i])
             {
 
                 $seat->reserve="yes";
                 $this->Seats->save($seat);
                 $count++;
+                $count2++;
             }
     endforeach;
-        
+        }
 
           $this->loadModel("Showtimes");
           $showtime=$this->Showtimes->get($hall->id,[
@@ -169,6 +173,7 @@ class HallsController extends AppController
           $this->set('showtime',$showtime);
           $this->set('cinema',$cinema);
           $this->set('movie',$movie);
+          $this->set('count2',$count2);
       }
     }
 }

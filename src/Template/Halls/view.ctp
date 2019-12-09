@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Hall $hall
  */
 ?>
-<<<<<<< HEAD
+
 <!-- <nav class="large-3 medium-4 columns" id="actions-sidebar">
 =======
 <style>
@@ -149,7 +149,7 @@
         <?= $this->Form->create('halls',array('controller'=>'halls','action'=>'buy')) ?>
         
         <?= $this->Form->text('Seat', ['class' => 'seat']); ?>
-        <?= $this->Form->text( 'Quantity', array( 'type' => 'number' ) ); ?>
+        
          <?= $this->Form->hidden( 'hallid', array( 'type' => 'number','value'=>$hall->id) ); ?>
         <?= $this->Form->button("Buy",array('class'=>'btn')) ;?>
         <?= $this->Form->end() ?>

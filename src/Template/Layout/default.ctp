@@ -46,7 +46,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <ul class="right">
                 <?php if($loggedIn) : ?>
                 <li><?= $this->Html->link(__('Logout'), ['controller'=>'Users','action' => 'logout']) ?></li>
-                <li><?= $this->Html->link(__('User Profile'), ['controller'=>'Users','action' => 'view',$this->Session->read('Auth.User.id')]) ?></li>
+                <?php if($this->Session->read('Auth.User.role')=="customer") : ?>
+                <li><?= $this->Html->link(__('User Profile'), ['controller'=>'Users','action' => 'view',$this->Session->read('Auth.User.id')]) ?>
+                <?php endif; ?>
+                </li>
                 <?php else  : ?>
                 <li><?= $this->Html->link(__('Admin'),['controller'=> 'Users','action' => 'adminlogin']); ?></li>
                 <li><?= $this->Html->link(__('Customer Login'), ['controller'=>'Users','action' => 'login']) ?></li>

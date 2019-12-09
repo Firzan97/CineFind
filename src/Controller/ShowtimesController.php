@@ -142,4 +142,15 @@ class ShowtimesController extends AppController
     // echo $article->cinema[0]->company;
 
     }
+       public function listshowtimes()
+    {
+        $this->paginate = [
+            'contain' => ['Movies', 'Halls', 'Cinemas']
+        ];
+        $showtimes = $this->paginate($this->Showtimes);
+        
+
+        $this->set(compact('showtimes'));
+        $this->set(compact('id',$id));
+    }
 }

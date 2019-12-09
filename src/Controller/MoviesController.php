@@ -120,4 +120,11 @@ class MoviesController extends AppController
 
         $this->set('movie', $movie);
     }
+    public function movielist()
+    {
+         $movies = $this->paginate($this->Movies);
+
+        $this->set(compact('movies'));
+
+    }
 }

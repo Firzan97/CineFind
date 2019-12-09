@@ -28,7 +28,7 @@
         </tr>
         <tr>
         <th scope="row"><?= __('Number Of Ticket:') ?></th>
-        <td><?= $quantityBuy; ?></td>
+        <td><?= $count2; ?></td>
         </tr>
           <tr>
         <th scope="row"><?= __('Seat:') ?></th>
@@ -51,7 +51,8 @@
         <td><?= $movie->title; ?></td>
         </tr>
     </table>
-  
+         <?= $this->Html->link(__('Back'), ['controller' => 'Movies', 'action' => 'index']) ?> 
+
 </div>
 <div class="halls view large-1 medium-8 columns content">
     </div>

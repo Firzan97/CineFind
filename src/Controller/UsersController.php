@@ -125,6 +125,7 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
             if ($user) {
+                $this->Auth->setUser($user);
                 $admin = $this->Auth->user('role');
                 if($admin == "users"){
                     return $this->redirect(['controller'=>'movies', 'action' => 'add']);
