@@ -146,13 +146,16 @@
         </table>
         <?php endif; ?>
 
-        <?= $this->Form->create('halls',array('controller'=>'halls','action'=>'buy')) ?>
+        <?= $this->Form->create('halls',array('controller'=>'halls','action'=>'buy',$hall->id)) ?>
         
         <?= $this->Form->text('Seat', ['class' => 'seat']); ?>
         
          <?= $this->Form->hidden( 'hallid', array( 'type' => 'number','value'=>$hall->id) ); ?>
+        <?= $this->Form->hidden( 'showtimeid', array( 'type' => 'number','value'=>$showtimeid) ); ?>
+
         <?= $this->Form->button("Buy",array('class'=>'btn')) ;?>
         <?= $this->Form->end() ?>
+
     </div>
    <!--  <div class="related">
         <h4><?= __('Related Showtimes') ?></h4>

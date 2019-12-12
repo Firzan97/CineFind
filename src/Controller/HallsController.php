@@ -34,11 +34,15 @@ class HallsController extends AppController
     public function view($id = null)
     {
 
-        $hall = $this->Halls->get($id, [
+            
+           $hallid= $this->request['url']['hallid'];
+           $showtimeid= $this->request['url']['showtimeid'];
+            $hall = $this->Halls->get($hallid, [
             'contain' => ['Seats', 'Showtimes']
         ]);
-
+        
         $this->set('hall', $hall);
+         $this->set('showtimeid', $showtimeid);
     }
 
     /**
@@ -106,10 +110,11 @@ class HallsController extends AppController
     }
     public function buy($id=null)
     {
+        
         $this->loadModel('Seats');
 
-        $ticket=$this->loadModel('Tickets');
         
+        $price=0;
         // $seat=$this->get($id);
         // $ticket=$this->get($id);
         $totalprice=0;
@@ -121,7 +126,7 @@ class HallsController extends AppController
             //pecahkan data daripada hall view
             $hallBuy=$data["hallid"];
             $seatBuy= $data["Seat"];
-            $quantityBuy=$data["Quantity"];
+             $showtimeid= $data["showtimeid"];
              $a=explode(",",$seatBuy);
            //cari array hall based on data yang diisi di hall view
            $hall = $this->Halls->get($data["hallid"], [
@@ -145,27 +150,33 @@ class HallsController extends AppController
         }
 
           $this->loadModel("Showtimes");
-          $showtime=$this->Showtimes->get($hall->id,[
+          $showtime=$this->Showtimes->get($showtimeid,[
             'contain'=>['Tickets']
         ]);
-          
+      
+          $ticket=$this->loadModel('Tickets');
+          $ticket=$this->Tickets->get($showtime->id);
+
           foreach($showtime->tickets as $ticket):
-            $price=15*$count;
+         
+            $price=$ticket->price*$count;
             $totalprice=$totalprice+$price;
             
             $ticket->quantity-$count;
             $this->Tickets->save($ticket);
-            $count=0;
+           
+
           endforeach;
-          
+
           $this->loadModel("Cinemas");
-          $cinema=$this->Cinemas->get($showtime->id);
+          $cinema=$this->Cinemas->get($showtime->cinema_id);
         
           $this->loadModel("Movies");
           $movie=$this->Movies->get($showtime->movie_id);
 
+        
 
-
+          $this->set('ticket', $ticket);
           $this->set('totalprice', $totalprice);
           $this->set('price', $price);
           $this->set('count',$count);

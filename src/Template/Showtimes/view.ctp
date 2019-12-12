@@ -55,7 +55,7 @@
     <?= $this->Form->text('Number of ticket',['value'=>0]); ?>
     <?= $this->Form->submit('BUY'); ?>
     <?= $this->Form->end(); ?> -->
-    <?= $this->Html->link(__('Select Seat'), ['controller'=>'halls','action' => 'view', $showtime->id & $showtime->id]) ?> 
+    <?= $this->Html->link(__('Select Seat'), ['controller'=>'halls','action' => 'view', "hallid"=>$showtime->hall_id,"showtimeid"=>$showtime->id]) ?> 
 </nav>
      <!-- <div class="row">
     <div class="related">
