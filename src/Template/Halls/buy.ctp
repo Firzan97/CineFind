@@ -20,11 +20,11 @@
         </tr> -->
         <tr>
             <th scope="row"><?= __('Total price:') ?></th>
-            <td><?= $totalprice; ?></td>
+            <td><?= $price; ?></td>
         </tr>
         <tr>
         <th scope="row"><?= __('Price:') ?></th>
-        <td><?= $price; ?></td>
+        <td><?= $ticket->price; ?></td>
         </tr>
         <tr>
         <th scope="row"><?= __('Number Of Ticket:') ?></th>

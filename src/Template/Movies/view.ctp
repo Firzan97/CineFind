@@ -38,7 +38,11 @@
     </table> -->
     <div class="movieInfo" >
        <?= $this->Html->image($movie->image, ['alt' => 'CakePHP','height'=> '400px','width'=>'500px']); ?>
+
+       <?php if($this->Session->read('Auth.User.role')=="customer"){ ?>
        <h4><?= $this->Html->link(__('Buy'), ['controller' => 'Showtimes', 'action' => 'index', $movie->id]) ?> </h4>
+       <?php } ?>
+
        <h4><?= $this->Html->link(__('Back'), ['controller' => 'Movies', 'action' => 'index', $movie->id]) ?> </h4>
        
     </div>
